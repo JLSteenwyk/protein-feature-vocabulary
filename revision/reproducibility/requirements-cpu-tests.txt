@@ -1,0 +1,5 @@
+# Install PyTorch separately from the CPU index, then these requirements:
+# python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.6.0+cpu
+# python -m pip install -r revision/reproducibility/requirements-cpu-tests.txt
+-r requirements-analysis.txt
+torch==2.6.0+cpu

@@ -1,0 +1,16 @@
+# Candidate clean GPU profile matching direct versions used by corrected runs.
+# Install torch/torchvision from the cu124 index before installing this file.
+# This profile is not certified until the clean runtime checks pass.
+-r requirements-analysis.txt
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+torchtext==0.18.0
+esm==3.2.1.post1
+transformers==4.48.1
+biotite==1.6.0
+biopython==1.84
+pandas==3.0.1
+huggingface-hub==0.36.2
+safetensors==0.7.0
+# Imported by esm.sdk during local model loading but absent from ESM metadata.
+httpx==0.28.1
