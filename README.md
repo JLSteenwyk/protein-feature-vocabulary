@@ -20,8 +20,11 @@ It is not the complete internal replay package. Document-rendering and
 archived-result verification commands need excluded inputs. No scientific
 accuracy claim follows solely from passing the regression suite.
 
-The data archives contain frozen evaluation inputs, selected hidden states,
-SAE feature matrices, a training-candidate FASTA and split membership. The
+The compact archive contains frozen evaluation inputs and split membership.
+Large hidden-state and derived SAE feature arrays are omitted for storage quota.
+The original training-candidate FASTA remains available in Figshare version 1.
+Some regeneration requires additional original inputs and external foundation
+models; the compact selection does not directly replay every analysis. The
 seven SAE checkpoints are project-trained models, not ESM foundation weights.
 The separate approximately 2.12 TB historical training activation store is
 not included; this distribution does not establish exact SAE retraining or
@@ -33,7 +36,9 @@ provenance, not portable filesystem locations.
 Verify the supplied SHA256SUMS before extraction. Extract all supplied tar files
 into one new project directory: paths are project-relative and contain no common
 enclosing folder. Do not overwrite an existing research checkout. The outer
-UPLOAD_MANIFEST.json lists each member's size and SHA-256 and archive identities.
+COMPACT_MANIFEST.json lists each member's size and SHA-256 and archive identities.
+Use COMPACT_README.md for the published selection; older upload instructions
+inside the frozen code archive describe a larger, unpublished local bundle.
 
 Use Python 3.11 and the scoped dependency files under revision/reproducibility/.
 For CPU tests, install PyTorch from the CPU index, then the tested lock:
@@ -60,7 +65,10 @@ Structure-token generation also needs the provider's structure encoder.
 Follow applicable terms. Some historical loaders use unpinned defaults; ensure
 the recorded snapshots are resolved rather than assuming offline mode pins them.
 
-DOI 10.6084/m9.figshare.32059860.v1 identifies the original materials, not this
-corrected code/input selection. The author will publish the new archival version.
-Do not describe the new files as publicly archived until its version and file
-identities have been verified.
+The published compact release is available at
+https://doi.org/10.6084/m9.figshare.32059860.v3 (five files, approximately 0.862 GB).
+Its code archive matches commit d3d1884216ef74de7f30ac050378312045d78b6b;
+subsequent repository documentation updates do not change that frozen snapshot.
+All five public files were SHA-256 verified by download in version 2; version 3
+retains the same file IDs and checksums with the corrected title. Original
+materials, including the training-candidate FASTA, remain in version 1.
